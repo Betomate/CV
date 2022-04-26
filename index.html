@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portafolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Draco is free PSD &amp; HTML template by @afnizarnur">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/kube.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/custom.min.css" />
+    <link rel="shortcut icon" href="img/favicon.png" />
+	<link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	<style>
+		.intro h1:before {
+			content: 'DEV';
+		}
+	</style>
+</head>
+<body>
+	<!-- Nav -->
+	<div class="main-nav">
+		<div class="container">
+			<header class="group top-nav">
+				<div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1">
+				    <span class="logo">Ver Más</span>
+				</div>
+			    <nav id="navbar-1" class="navbar item-nav">
+				    <ul>
+				        <li class="active"><a href="#about">Acerca de Mi</a></li>
+				        <li><a href="#experiences">Experiencia</a></li>
+				        <li><a href="#achievements">Certificaciones</a></li>
+				        <li><a href="#skills">Skills</a></li>
+				    </ul>
+				</nav>
+			</header>
+		</div>
+	</div>
+
+	<!-- Introduction -->
+	<div class="intro section" id="about">
+		<div class="container">
+			<p>Hola, mi nombre es Daniel Alberto Castillo Robles</p>
+			<div class="units-row units-split wrap">
+				<div class="unit-20">
+					<img src="img/ava.jpg" alt="Avatar">
+				</div>
+				<div class="unit-80">
+					<h1>Soy<br><span id="typed"></span></h1>
+				</div>
+				<p>
+					Cuento con amplia experiencia planeando implementando y desarrollando bots, así como haciendo analisis de procesos para optimización y automatización, hemos puesto en marcha proyectos con OCR y NPL, tengo nociones fuertes de como se labora en entornos ágiles y mas de tres años de experiencia en el mundo del RPA 
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Work -->
+	<div class="work section second" id="experiences">
+		<div class="container">
+			<h1>Experiencia<br>Laboral</h1>
+			<ul class="work-list">
+				<li>2018-2019</li>
+				<li><a href="#">Taxi Central</a></li>
+				<li>Consultor IT</li>
+			</ul>
+			<ul class="work-list">
+				<li>2021</li>
+				<li><a href="#">CELEC</a></li>
+				<li>Consultor RPA</li>
+			</ul>
+			<ul class="work-list">
+				<li>2019-Actualidad</li>
+				<li><a href="#">Grupo Posadas</a></li>
+				<li>Business Analyst / RPA Developer</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Certificaciones -->
+	<div class="award section second" id="achievements">
+		<div class="container">
+			<h1>Certificaciones</h1>
+			<ul class="award-list list-flat">
+				<li>Abril 2020</li>
+				<li>Automation Anywhere Certified Advanced RPA Professional (V11.0)</li>
+				<li>ID: 16514824</li>
+			</ul>
+			<ul class="award-list list-flat">
+				<li>Mayo 2020</li>
+				<li>UiPath RPA Developer Advanced v0 [Legacy] (RDAv0L)</li>
+				<li>ID: 440623336642665338</li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Skills -->
+	<div class="skills section second" id="skills">
+		<div class="container">
+			<h1>Skills</h1>
+			<ul class="skill-list list-flat">
+				<li>Web</li>
+				<li>HTML / CSS / Javascript</li>
+			</ul>
+			<ul class="skill-list list-flat">
+				<li>Database</li>
+				<li>SQL / MongoDB </li>
+			</ul>
+			<ul class="skill-list list-flat">
+				<li>RPA</li>
+				<li>Blue Prism / Automation Anywhere / UiPath</li>
+			</ul>
+			<ul class="skill-list list-flat">
+				<li>Control de Versiones</li>
+				<li>Git / GitHub</li>
+			</ul>
+		</div>
+	</div>
+
+	<footer>
+		<div class="container">
+			<div class="units-row">
+			    <div class="unit-50">
+			    	<p>Hecho con ♡</p>
+			    </div>
+			    <div class="unit-50">
+					<ul class="social list-flat right">
+						<li><a href="mailto:albertocst94@gmail.com"><i class="fa fa-send"></i></a></li>
+						<li><a href="https://www.linkedin.com/in/albertocst/"><i class="fa fa-linkedin"></i></a></li>
+					</ul>
+			    </div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Javascript -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/typed.min.js"></script>
+    <script src="js/kube.min.js"></script>
+    <script src="js/site.js"></script>
+    <script>
+		function newTyped(){}$(function(){$("#typed").typed({
+		strings: ["RPA Developer", "Business Analyst", "RPA Consultant"],
+
+		typeSpeed:90,backDelay:700,contentType:"html",loop:!0,resetCallback:function(){newTyped()}}),$(".reset").click(function(){$("#typed").typed("reset")})});
+    </script>
+</body>
+</html>
