@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Portafolio</title>
+    <title>Portafolio – Daniel Alberto Castillo Robles (RPA Solution Architect)</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Draco is free PSD &amp; HTML template by @afnizarnur">
-    <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Portafolio de Daniel Alberto Castillo Robles, RPA Solution Architect con 5+ años de experiencia en automatización y mejora de procesos." />
+    <meta name="author" content="Daniel Alberto Castillo Robles" />
+
+    <!-- Preconnect para acelerar Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="stylesheet" href="css/kube.min.css" />
     <link rel="stylesheet" href="css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/custom.min.css" />
     <link rel="shortcut icon" href="img/favicon.png" />
-	<link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:700' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC:700&display=swap" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet" type="text/css">
 	<style>
 		.intro h1:before {
 			content: 'DEV';
@@ -24,12 +28,12 @@
 	<div class="main-nav">
 		<div class="container">
 			<header class="group top-nav">
-				<div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1">
+				<div class="navigation-toggle" data-tools="navigation-toggle" data-target="#navbar-1" aria-controls="navbar-1" aria-expanded="false" aria-label="Abrir menú">
 				    <span class="logo">Ver Más</span>
 				</div>
-			    <nav id="navbar-1" class="navbar item-nav">
+			    <nav id="navbar-1" class="navbar item-nav" role="navigation" aria-label="Navegación principal">
 				    <ul>
-				        <li class="active"><a href="#about">Acerca de Mi</a></li>
+				        <li class="active"><a href="#about">Acerca de mí</a></li>
 				        <li><a href="#experiences">Experiencia</a></li>
 				        <li><a href="#achievements">Certificaciones</a></li>
 				        <li><a href="#skills">Skills</a></li>
@@ -42,16 +46,18 @@
 	<!-- Introduction -->
 	<div class="intro section" id="about">
 		<div class="container">
-			<p>Hola soy Daniel Alberto Castillo Robles</p>
+			<p>Hola, soy Daniel Alberto Castillo Robles</p>
 			<div class="units-row units-split wrap">
 				<div class="unit-20">
-					<img src="img/ava.jpg" alt="Avatar">
+					<img src="img/ava.jpg" alt="Foto de Daniel Alberto Castillo Robles" loading="lazy" decoding="async">
 				</div>
 				<div class="unit-80">
-					<h1>Soy<br><span id="typed"></span></h1>
+					<h1>Soy<br><span id="typed" aria-live="polite"></span></h1>
 				</div>
 				<p>
-					Cuento con amplia experiencia planeando implementando y desarrollando bots, así como haciendo analisis de procesos para optimización y automatización, mi enfoque incluye pruebas exhaustivas, monitoreo continuo y la búsqueda constante de oportunidades de mejora en la eficiencia operativa a través de la automatización, hemos puesto en marcha proyectos con OCR y NPL, tengo nociones fuertes laborando en entornos ágiles y más de cinco años de experiencia en RPA 
+					Cuento con amplia experiencia <strong>planeando, implementando</strong> y desarrollando bots, así como realizando <strong>análisis</strong> de procesos para optimización y automatización.
+					Mi enfoque incluye pruebas exhaustivas, monitoreo continuo y la búsqueda constante de oportunidades de mejora en la eficiencia operativa a través de la automatización.
+					He puesto en marcha proyectos con OCR y <strong>NLP</strong> y tengo sólida experiencia trabajando en entornos ágiles, con más de cinco años de trayectoria en RPA.
 				</p>
 			</div>
 		</div>
@@ -60,7 +66,7 @@
 	<!-- Work -->
 	<div class="work section second" id="experiences">
 		<div class="container">
-			<h1>Experiencia<br>Laboral</h1
+			<h1 role="heading" aria-level="2">Experiencia<br>Laboral</h1>
 			<ul class="work-list">
 				<li>2024 - Actualidad</li>
 				<li><a href="https://www.grupoalen.com/">Grupo AlEn</a></li>
@@ -89,49 +95,59 @@
 		</div>
 	</div>
 
-
 	<!-- Certificaciones -->
 	<div class="award section second" id="achievements">
 		<div class="container">
-			<h1>Certificaciones</h1>
+			<h1 role="heading" aria-level="2">Certificaciones</h1>
+
 			<ul class="award-list list-flat">
-				<li>Agosto 2025</li>
+				<li><time datetime="2025-08">Agosto 2025</time></li>
 				<li>Automation Anywhere Certified Master RPA Professional (Automation 360)</li>
 				<li>ID: 157621561</li>
+			</ul>
+
 			<ul class="award-list list-flat">
-				<li>Abril 2020</li>
+				<li><time datetime="2020-04">Abril 2020</time></li>
 				<li>Automation Anywhere Certified Advanced RPA Professional (Automation 360)</li>
 				<li>ID: 119548946</li>
+			</ul>
+
 			<ul class="award-list list-flat">
-				<li>Abril 2020</li>
+				<li><time datetime="2020-04">Abril 2020</time></li>
 				<li>Automation Anywhere Certified Essential RPA Professional (Automation 360)</li>
 				<li>ID: 112905535</li>
+			</ul>
+
 			<ul class="award-list list-flat">
-				<li>Abril 2020</li>
+				<li><time datetime="2020-04">Abril 2020</time></li>
 				<li>Automation Anywhere Certified Advanced RPA Professional (V11.0)</li>
 				<li>ID: 16514824</li>
+			</ul>
+
 			<ul class="award-list list-flat">
-				<li>Abril 2020</li>
+				<li><time datetime="2020-04">Abril 2020</time></li>
 				<li>Google Gestión de Proyectos</li>
 				<li>ID: 30CILVK615QM</li>
 			</ul>
+
 			<ul class="award-list list-flat">
-				<li>Mayo 2020</li>
+				<li><time datetime="2020-05">Mayo 2020</time></li>
 				<li>UiPath RPA Developer Advanced v0 [Legacy] (RDAv0L)</li>
 				<li>ID: 440623336642665338</li>
 			</ul>
+
 			<ul class="award-list list-flat">
-				<li>Septimbre 2022</li>
+				<li><time datetime="2022-09">Septiembre 2022</time></li>
 				<li>Kofax RPA 11.1 Explorer skill</li>
 				<li>ID: 63162cde19daf40aa2202479</li>
 			</ul>
 		</div>
 	</div>
 
-	<!-- Skills -->
+	<!-- Skills (sin cambios funcionales/estructura) -->
 	<div class="skills section second" id="skills">
 		<div class="container">
-			<h1>Skills</h1>
+			<h1 role="heading" aria-level="2">Skills</h1>
 			<ul class="skill-list list-flat">
 				<li>Coding</li>
 				<li>HTML / CSS / Javascript / Python / VBA</li>
@@ -159,24 +175,40 @@
 			    </div>
 			    <div class="unit-50">
 					<ul class="social list-flat right">
-						<li><a href="mailto:albertocst94@gmail.com"><i class="fa fa-send"></i></a></li>
-						<li><a href="https://www.linkedin.com/in/albertocst/"><i class="fa fa-linkedin"></i></a></li>
+						<li>
+							<a href="mailto:albertocst94@gmail.com" aria-label="Enviar correo a albertocst94@gmail.com">
+								<i class="fa fa-send" aria-hidden="true"></i>
+							</a>
+						</li>
+						<li>
+							<a href="https://www.linkedin.com/in/albertocst/" aria-label="Visitar mi perfil de LinkedIn">
+								<i class="fa fa-linkedin" aria-hidden="true"></i>
+							</a>
+						</li>
 					</ul>
 			    </div>
 			</div>
 		</div>
 	</footer>
 
-	<!-- Javascript -->
+	<!-- Javascript (orden original para no afectar funcionamiento) -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/typed.min.js"></script>
     <script src="js/kube.min.js"></script>
     <script src="js/site.js"></script>
     <script>
-		function newTyped(){}$(function(){$("#typed").typed({
-		strings: ["RPA Consultant","Solution Architect","RPA Developer", "Business Analyst"],
-
-		typeSpeed:90,backDelay:700,contentType:"html",loop:!0,resetCallback:function(){newTyped()}}),$(".reset").click(function(){$("#typed").typed("reset")})});
+		function newTyped(){}
+		$(function(){
+			$("#typed").typed({
+				strings: ["RPA Consultant","Solution Architect","RPA Developer", "Business Analyst"],
+				typeSpeed:90,
+				backDelay:700,
+				contentType:"html",
+				loop:!0,
+				resetCallback:function(){ newTyped(); }
+			});
+			$(".reset").click(function(){ $("#typed").typed("reset"); })
+		});
     </script>
 </body>
 </html>
