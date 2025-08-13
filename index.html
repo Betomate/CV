@@ -1,23 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Portafolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Draco is free PSD &amp; HTML template by @afnizarnur">
-    <meta name="author" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="css/kube.min.css" />
-    <link rel="stylesheet" href="css/font-awesome.min.css" />
-    <link rel="stylesheet" href="css/custom.min.css" />
-    <link rel="shortcut icon" href="img/favicon.png" />
-	<link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:700' rel='stylesheet' type='text/css'>
-	<link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-	<style>
-		.intro h1:before {
-			content: 'DEV';
-		}
-	</style>
+  <meta charset="utf-8" />
+  <title>Portafolio – Daniel Alberto Castillo Robles</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portafolio de Daniel Alberto Castillo Robles: RPA Solution Architect con experiencia en automatización de procesos (RPA), OCR y NLP." />
+  <meta name="author" content="Daniel Alberto Castillo Robles" />
+
+  <!-- Mantén tus hojas actuales para conservar el estilo -->
+  <link rel="stylesheet" href="css/kube.min.css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/custom.min.css" />
+  <link rel="shortcut icon" href="img/favicon.png" />
+  <link href='https://fonts.googleapis.com/css?family=Playfair+Display+SC:700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
+  <!-- Mejoras visuales conservando tu look -->
+  <style>
+    :root{ --bg:#ffffff; --fg:#1f2937; --muted:#6b7280; --navbg:#f7f7f7; }
+    html.dark{ --bg:#0b1220; --fg:#e5e7eb; --muted:#94a3b8; --navbg:#0e1729; }
+    body{ background:var(--bg); color:var(--fg); }
+    .main-nav{ background:var(--navbg); }
+    .muted{ color:var(--muted); }
+
+    /* Marca de agua DEV como en tu estilo actual */
+    .intro h1{ position:relative; }
+    .intro h1:before{
+      content:'DEV';
+      position:absolute; inset:0; display:grid; place-items:center;
+      font-family:'Playfair Display SC', serif; line-height:1; color:currentColor;
+      opacity:.06; z-index:0; pointer-events:none;
+      font-size:clamp(8rem, 35vw, 48rem);
+    }
+    .intro h1 span{ position:relative; z-index:1; border-right:.1em solid currentColor; white-space:nowrap; overflow:hidden; }
+    .intro .units-row > *{ position:relative; z-index:1; }
+
+    /* Botones nav */
+    .chip{ display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .7rem; border-radius:999px; border:1px solid rgba(100,116,139,.35); font-size:.85rem; }
+    .chip[aria-pressed="true"]{ border-color:rgba(100,116,139,.9); font-weight:700; }
+
+    /* Pequeñas correcciones tipográficas */
+    h1,h2,h3{ font-family:'Playfair Display SC',serif; }
+    body{ font-family:'Lato', Arial, sans-serif; }
+    .section h1,.section h2{ text-transform:uppercase; letter-spacing:.01em; }
+  </style>
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Portafolio – Daniel Alberto Castillo Robles" />
+  <meta property="og:description" content="RPA Solution Architect con 5+ años en automatización y optimización de procesos." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="img/ava.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- JSON-LD (se genera al final para mantenerlo sincronizado) -->
+  <script type="application/ld+json" id="schema-person"></script>
 </head>
 <body>
 	<!-- Nav -->
@@ -29,10 +65,16 @@
 				</div>
 			    <nav id="navbar-1" class="navbar item-nav">
 				    <ul>
-				        <li class="active"><a href="#about">Acerca de Mi</a></li>
-				        <li><a href="#experiences">Experiencia</a></li>
-				        <li><a href="#achievements">Certificaciones</a></li>
-				        <li><a href="#skills">Skills</a></li>
+				        <li class="active"><a href="#about" data-i18n="nav.about">Acerca de mí</a></li>
+				        <li><a href="#experiences" data-i18n="nav.exp">Experiencia</a></li>
+				        <li><a href="#achievements" data-i18n="nav.certs">Certificaciones</a></li>
+				        <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+				    </ul>
+				    <ul class="right">
+				      <li><button id="lang-es" class="chip" aria-pressed="true">ES</button></li>
+				      <li><button id="lang-en" class="chip" aria-pressed="false">EN</button></li>
+				      <li><button id="theme-toggle" class="chip" title="Tema"><i class="fa fa-adjust"></i> <span id="theme-label">Oscuro</span></button></li>
+				      <li><a class="chip" href="#contact" data-i18n="nav.cta">Contacto</a></li>
 				    </ul>
 				</nav>
 			</header>
@@ -41,17 +83,17 @@
 
 	<!-- Introduction -->
 	<div class="intro section" id="about">
-		<div class="container">
-			<p>Hola soy Daniel Alberto Castillo Robles</p>
+		<div class="container hero">
+			<p class="muted" data-i18n="intro.hola">Hola, soy <strong>Daniel Alberto Castillo Robles</strong></p>
 			<div class="units-row units-split wrap">
 				<div class="unit-20">
-					<img src="img/ava.jpg" alt="Avatar">
+					<img src="img/ava.jpg" alt="Avatar" class="round" loading="lazy">
 				</div>
 				<div class="unit-80">
-					<h1>Soy<br><span id="typed"></span></h1>
+					<h1>SOY<br><span id="typed"></span></h1>
 				</div>
-				<p>
-					Cuento con amplia experiencia planeando implementando y desarrollando bots, así como haciendo analisis de procesos para optimización y automatización, mi enfoque incluye pruebas exhaustivas, monitoreo continuo y la búsqueda constante de oportunidades de mejora en la eficiencia operativa a través de la automatización, hemos puesto en marcha proyectos con OCR y NPL, tengo nociones fuertes laborando en entornos ágiles y más de cinco años de experiencia en RPA 
+				<p data-i18n="intro.desc">
+					Cuento con amplia experiencia planeando, implementando y desarrollando bots, así como haciendo análisis de procesos para optimización y automatización. Mi enfoque incluye pruebas exhaustivas, monitoreo continuo y la búsqueda constante de oportunidades de mejora en la eficiencia operativa a través de la automatización. Hemos puesto en marcha proyectos con OCR y NLP; tengo nociones sólidas laborando en entornos ágiles y más de cinco años de experiencia en RPA.
 				</p>
 			</div>
 		</div>
@@ -60,26 +102,31 @@
 	<!-- Work -->
 	<div class="work section second" id="experiences">
 		<div class="container">
-			<h1>Experiencia<br>Laboral</h1>
+			<h1 data-i18n="exp.titulo">Experiencia<br>Laboral</h1>
+			<ul class="work-list">
+				<li data-i18n="exp.alen.fecha">jul. 2024 - actualidad</li>
+				<li><a href="https://www.grupoalen.com/" target="_blank" rel="noopener">Grupo AlEn</a></li>
+				<li data-i18n="exp.alen.rol">RPA Solution Architect</li>
+			</ul>
+			<ul class="work-list">
+				<li>2023 - jul. 2024</li>
+				<li><a href="https://mbge.com.mx/" target="_blank" rel="noopener">MBGE</a></li>
+				<li>Desarrollador de Producto</li>
+			</ul>
+			<ul class="work-list">
+				<li>2019 - 2022</li>
+				<li><a href="https://www.posadas.com/es/home" target="_blank" rel="noopener">Grupo Posadas</a></li>
+				<li>Business Analyst / RPA Developer</li>
+			</ul>
+			<ul class="work-list">
+				<li>2021</li>
+				<li><a href="https://www.celec.gob.ec/" target="_blank" rel="noopener">CELEC</a></li>
+				<li>Consultor RPA</li>
+			</ul>
 			<ul class="work-list">
 				<li>2018 - 2019</li>
 				<li><a href="#">Taxi Central Morelia</a></li>
 				<li>Consultor IT</li>
-			</ul>
-			<ul class="work-list">
-				<li>2021</li>
-				<li><a href="https://www.celec.gob.ec/">CELEC</a></li>
-				<li>Consultor RPA</li>
-			</ul>
-			<ul class="work-list">
-				<li>2019 - 2022</li>
-				<li><a href="https://www.posadas.com/es/home">Grupo Posadas</a></li>
-				<li>Business Analyst / RPA Developer</li>
-			</ul>
-			<ul class="work-list">
-				<li>2023 - Actualidad</li>
-				<li><a href="https://mbge.com.mx/">MBGE</a></li>
-				<li>Desarrollador de Producto</li>
 			</ul>
 		</div>
 	</div>
@@ -87,10 +134,30 @@
 	<!-- Certificaciones -->
 	<div class="award section second" id="achievements">
 		<div class="container">
-			<h1>Certificaciones</h1>
+			<h1 data-i18n="cert.titulo">Certificaciones</h1>
+			<ul class="award-list list-flat">
+				<li data-i18n="cert.master.fecha">2025</li>
+				<li>Automation Anywhere Certified Master RPA Professional (Automation 360) – 2023</li>
+				<li>ID: 157621561</li>
+			</ul>
+			<ul class="award-list list-flat">
+				<li>2024</li>
+				<li>Advanced Automation Certification</li>
+				<li>ID: 119548946</li>
+			</ul>
+			<ul class="award-list list-flat">
+				<li>2024</li>
+				<li>Programa especializado: Gestión de Proyectos de Google</li>
+				<li>ID: 30CILVK615QM</li>
+			</ul>
+			<ul class="award-list list-flat">
+				<li>2024</li>
+				<li>Essentials Automation Certification</li>
+				<li>ID: 112905535</li>
+			</ul>
 			<ul class="award-list list-flat">
 				<li>Abril 2020</li>
-				<li>Automation Anywhere Certified Advanced RPA Professional (V11.0)</li>
+				<li>Automation Anywhere Certified Advanced RPA Professional (v11.0)</li>
 				<li>ID: 16514824</li>
 			</ul>
 			<ul class="award-list list-flat">
@@ -99,8 +166,8 @@
 				<li>ID: 440623336642665338</li>
 			</ul>
 			<ul class="award-list list-flat">
-				<li>Septimbre 2022</li>
-				<li>Kofax RPA 11.1 Explorer skill</li>
+				<li>Septiembre 2022</li>
+				<li>Kofax RPA 11.1 Explorer Skill</li>
 				<li>ID: 63162cde19daf40aa2202479</li>
 			</ul>
 		</div>
@@ -112,7 +179,7 @@
 			<h1>Skills</h1>
 			<ul class="skill-list list-flat">
 				<li>Coding</li>
-				<li>HTML / CSS / Javascript / Phyton / VBA</li>
+				<li>HTML / CSS / JavaScript / <strong>Python</strong> / VBA</li>
 			</ul>
 			<ul class="skill-list list-flat">
 				<li>Database</li>
@@ -129,32 +196,120 @@
 		</div>
 	</div>
 
+  <!-- Contacto simple -->
+  <div class="section" id="contact">
+    <div class="container">
+      <h1 data-i18n="contacto.titulo">Contacto</h1>
+      <p class="muted" data-i18n="contacto.texto">Disponible para colaborar en iniciativas de hiperautomatización, analítica y AI aplicada.</p>
+      <p>
+        <a class="chip" href="mailto:albertocst94@gmail.com" data-i18n="contacto.btnCorreo"><i class="fa fa-send"></i> Enviar correo</a>
+        <a class="chip" href="https://www.linkedin.com/in/albertocst/" target="_blank" rel="noopener" data-i18n="contacto.btnLinkedin"><i class="fa fa-linkedin"></i> Ver LinkedIn</a>
+      </p>
+    </div>
+  </div>
+
 	<footer>
 		<div class="container">
 			<div class="units-row">
 			    <div class="unit-50">
-			    	<p>---</p>
+			    	<p>© <span id="year"></span> Daniel Alberto Castillo Robles</p>
 			    </div>
 			    <div class="unit-50">
 					<ul class="social list-flat right">
-						<li><a href="mailto:albertocst94@gmail.com"><i class="fa fa-send"></i></a></li>
-						<li><a href="https://www.linkedin.com/in/albertocst/"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="mailto:albertocst94@gmail.com" aria-label="Enviar correo"><i class="fa fa-send"></i></a></li>
+						<li><a href="https://www.linkedin.com/in/albertocst/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa fa-linkedin"></i></a></li>
 					</ul>
 			    </div>
 			</div>
 		</div>
 	</footer>
 
-	<!-- Javascript -->
+	<!-- Javascript (conserva tus dependencias) -->
 	<script src="js/jquery.min.js"></script>
 	<script src="js/typed.min.js"></script>
-    <script src="js/kube.min.js"></script>
-    <script src="js/site.js"></script>
-    <script>
-		function newTyped(){}$(function(){$("#typed").typed({
-		strings: ["RPA Consultant","Solution Architect","RPA Developer", "Business Analyst"],
+  <script src="js/kube.min.js"></script>
+  <script>
+    // Año en footer
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-		typeSpeed:90,backDelay:700,contentType:"html",loop:!0,resetCallback:function(){newTyped()}}),$(".reset").click(function(){$("#typed").typed("reset")})});
-    </script>
+    // Typewriter igual que antes
+    function newTyped(){}
+    $(function(){
+      $("#typed").typed({
+        strings: ["RPA Consultant","Solution Architect","RPA Developer", "Business Analyst"],
+        typeSpeed:90, backDelay:700, contentType:"html", loop:true, resetCallback:function(){ newTyped(); }
+      });
+      $(".reset").click(function(){ $("#typed").typed("reset") })
+    });
+
+    // --- Tema oscuro/claro (sin romper estilos) ---
+    const themeBtn = document.getElementById('theme-toggle');
+    const themeLabel = document.getElementById('theme-label');
+    const applyTheme = (t)=>{
+      document.documentElement.classList.toggle('dark', t==='dark');
+      themeLabel.textContent = t==='dark' ? 'Claro' : 'Oscuro';
+      localStorage.setItem('theme', t);
+    };
+    const storedTheme = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    applyTheme(storedTheme);
+    themeBtn.addEventListener('click', ()=>{
+      applyTheme(document.documentElement.classList.contains('dark') ? 'light' : 'dark');
+    });
+
+    // --- i18n ES/EN mínimo ---
+    const dict = {
+      es: {
+        'nav.about':'Acerca de mí','nav.exp':'Experiencia','nav.certs':'Certificaciones','nav.skills':'Skills','nav.cta':'Contacto',
+        'intro.hola':'Hola, soy <strong>Daniel Alberto Castillo Robles</strong>',
+        'intro.desc':'Cuento con amplia experiencia planeando, implementando y desarrollando bots, así como haciendo análisis de procesos para optimización y automatización. Mi enfoque incluye pruebas exhaustivas, monitoreo continuo y la búsqueda constante de oportunidades de mejora en la eficiencia operativa a través de la automatización. Hemos puesto en marcha proyectos con OCR y NLP; tengo nociones sólidas laborando en entornos ágiles y más de cinco años de experiencia en RPA.',
+        'exp.titulo':'Experiencia
+Laboral','exp.alen.fecha':'jul. 2024 - actualidad','exp.alen.rol':'RPA Solution Architect',
+        'cert.titulo':'Certificaciones','cert.master.fecha':'2025',
+        'contacto.titulo':'Contacto','contacto.texto':'Disponible para colaborar en iniciativas de hiperautomatización, analítica y AI aplicada.','contacto.btnCorreo':'Enviar correo','contacto.btnLinkedin':'Ver LinkedIn'
+      },
+      en: {
+        'nav.about':'About','nav.exp':'Experience','nav.certs':'Certifications','nav.skills':'Skills','nav.cta':'Contact',
+        'intro.hola':'Hi, I\'m <strong>Daniel Alberto Castillo Robles</strong>',
+        'intro.desc':'Automation (RPA) expert with experience planning, implementing and developing bots as well as process analysis for optimisation. Focused on testing, monitoring and continuous improvement. Delivered OCR & NLP projects within agile environments; 5+ years in RPA.',
+        'exp.titulo':'Work
+Experience','exp.alen.fecha':'Jul 2024 - present','exp.alen.rol':'RPA Solution Architect',
+        'cert.titulo':'Certifications','cert.master.fecha':'2025',
+        'contacto.titulo':'Contact','contacto.texto':'Open to collaborate on hyperautomation, analytics and applied AI initiatives.','contacto.btnCorreo':'Send email','contacto.btnLinkedin':'View LinkedIn'
+      }
+    };
+    const langES = document.getElementById('lang-es');
+    const langEN = document.getElementById('lang-en');
+    function setLang(l){
+      document.documentElement.lang = l==='en' ? 'en' : 'es';
+      [langES,langEN].forEach(b=>b.setAttribute('aria-pressed','false'));
+      (l==='en'?langEN:langES).setAttribute('aria-pressed','true');
+      document.querySelectorAll('[data-i18n]').forEach(el=>{
+        const k = el.getAttribute('data-i18n');
+        const txt = (dict[l]||{})[k];
+        if(txt) el.innerHTML = txt;
+      });
+      localStorage.setItem('lang', l);
+    }
+    setLang(localStorage.getItem('lang') || 'es');
+    langES.addEventListener('click',()=>setLang('es'));
+    langEN.addEventListener('click',()=>setLang('en'));
+
+    // --- JSON-LD Person + Credentials ---
+    const schema = {
+      '@context':'https://schema.org', '@type':'Person',
+      'name':'Daniel Alberto Castillo Robles', 'jobTitle':'RPA Solution Architect',
+      'email':'mailto:albertocst94@gmail.com','image':'img/ava.jpg',
+      'url': window.location.origin + window.location.pathname,
+      'worksFor': {'@type':'Organization','name':'Grupo AlEn'},
+      'sameAs':['https://www.linkedin.com/in/albertocst/'],
+      'hasCredential': [
+        {'@type':'EducationalOccupationalCredential','name':'Automation Anywhere Certified Master RPA Professional (Automation 360) – 2023','issuer':{'@type':'Organization','name':'Automation Anywhere'},'identifier':'157621561','dateIssued':'2025-08','validFor':'P2Y'},
+        {'@type':'EducationalOccupationalCredential','name':'Advanced Automation Certification – 2024','issuer':{'@type':'Organization','name':'Automation Anywhere'},'identifier':'119548946','dateIssued':'2024-10','validFor':'P2Y'},
+        {'@type':'EducationalOccupationalCredential','name':'Programa especializado: Gestión de Proyectos de Google','issuer':{'@type':'Organization','name':'Google'},'identifier':'30CILVK615QM','dateIssued':'2024-10'},
+        {'@type':'EducationalOccupationalCredential','name':'Essentials Automation Certification – 2024','issuer':{'@type':'Organization','name':'Automation Anywhere'},'identifier':'112905535','dateIssued':'2024-08','validFor':'P2Y'}
+      ]
+    };
+    document.getElementById('schema-person').textContent = JSON.stringify(schema);
+  </script>
 </body>
 </html>
